@@ -1,19 +1,5 @@
-pipeline { 
-    agent {
-        label 'ws'
-    }
-    stages {
-        stage('Lint Checks') {
-            steps {
-                sh "echo Perform Lint Checker"
-                //sh "mvn checkstyle:check || true"
+@Library('shared-library') _
 
-            }
-        }
-        stage('Static Code Analysis') {
-            steps {
-                sh "echo Static Checks ...."
-            }
-        }
-    }
-}
+
+env.COMPONENT="shipping"
+java()
